@@ -1,0 +1,15 @@
+<svg viewBox="-15 10 100 30" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="rope-pattern" width="4" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(30)">
+      <rect width="4" height="10" fill="#D4A373" />
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#8B5A2B" stroke-width="1.5" />
+      <line x1="2" y1="0" x2="2" y2="10" stroke="#FFE6A7" stroke-width="0.5" />
+    </pattern>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="1" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <path d="M -15 25 h 35 c 15 0, 15 -10, 30 -10 c 15 0, 15 20, 0 20 c -15 0, -15 -20, -30 -20 c -15 0, -15 20, 0 20 c 15 0, 15 -10, 30 -10 h 35"
+        fill="none" stroke="url(#rope-pattern)" stroke-width="6" stroke-linecap="round" filter="url(#shadow)" />
+</svg>

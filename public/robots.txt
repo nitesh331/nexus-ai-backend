@@ -1,0 +1,5 @@
+# robots.txt for Nexus AI
+User-agent: *
+Allow: /
+
+Sitemap: https://nexusai.app/sitemap.xml

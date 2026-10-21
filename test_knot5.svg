@@ -1,0 +1,16 @@
+<svg viewBox="-20 0 140 40" xmlns="http://www.w3.org/2000/svg" style="background:#888">
+  <defs>
+    <pattern id="rope-cuts" width="8" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+      <rect width="8" height="16" fill="white" />
+      <line x1="0" y1="0" x2="0" y2="16" stroke="black" stroke-width="2.5" />
+    </pattern>
+    <mask id="knot-stencil">
+      <rect width="100%" height="100%" fill="url(#rope-cuts)" />
+    </mask>
+  </defs>
+  
+  <g mask="url(#knot-stencil)" stroke="white" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M -15,15 H 25 C 40,15 45,5 55,5 C 65,5 75,15 75,25 C 75,35 60,35 45,35 C 35,35 30,30 20,20" />
+    <path d="M 115,25 H 75 C 60,25 55,35 45,35 C 35,35 25,25 25,15 C 25,5 40,5 55,5 C 65,5 70,10 80,20" />
+  </g>
+</svg>

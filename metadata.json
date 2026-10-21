@@ -1,0 +1,6 @@
+{
+  "name": "Nexus AI",
+  "description": "A modern, premium AI assistant featuring multi-mode workspaces, AI Companion with 3D voice visualizer, debate partner, and interactive voice-to-voice calling.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

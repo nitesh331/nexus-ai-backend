@@ -1,0 +1,49 @@
+services:
+  - type: web
+    name: nexus-ai-backend
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "10000"
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: TAVILY_API_KEY
+        sync: false
+      - key: CHAT_API_KEY
+        sync: false
+      - key: DEEP_SEARCH_API_KEY
+        sync: false
+      - key: WEB_DESIGN_API_KEY
+        sync: false
+      - key: NOTES_API_KEY
+        sync: false
+      - key: IMAGE_VIDEO_API_KEY
+        sync: false
+      - key: CODEX_API_KEY
+        sync: false
+      - key: OPUS_API_KEY
+        sync: false
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: APP_URL
+        sync: false
+      - key: GITHUB_CLIENT_ID
+        sync: false
+      - key: GITHUB_CLIENT_SECRET
+        sync: false
+      - key: OLLAMA_BASE_URL
+        sync: false
+      - key: OLLAMA_MODEL
+        sync: false
+    healthCheckPath: /api/network-status
+    autoDeploy: true

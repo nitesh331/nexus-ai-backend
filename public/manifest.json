@@ -1,0 +1,19 @@
+{
+  "name": "Nexus AI – Multi-Workspace Intelligence & AI Companion",
+  "short_name": "Nexus AI",
+  "description": "A modern, premium AI assistant featuring multi-mode workspaces, AI Companion with 3D voice visualizer, debate partner, and interactive voice-to-voice calling.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0d0d0d",
+  "theme_color": "#0d0d0d",
+  "categories": ["productivity", "utilities", "education"],
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

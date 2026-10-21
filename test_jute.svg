@@ -1,0 +1,25 @@
+<svg viewBox="-15 10 100 30" xmlns="http://www.w3.org/2000/svg" style="background:#222">
+  <defs>
+    <filter id="jute">
+      <!-- Create a fibrous texture -->
+      <feTurbulence type="fractalNoise" baseFrequency="0.8 0.1" numOctaves="3" result="noise" />
+      
+      <!-- Create a bump map -->
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 5 -2" in="noise" result="bumpMap" />
+      
+      <!-- Apply lighting to the bump map -->
+      <feDiffuseLighting in="bumpMap" surfaceScale="3" diffuseConstant="1.2" lighting-color="#e0b888" result="light">
+        <feDistantLight azimuth="45" elevation="35" />
+      </feDiffuseLighting>
+      
+      <!-- Composite the lighting with the base shape -->
+      <feComposite operator="in" in="light" in2="SourceGraphic" result="textured" />
+      
+      <!-- Add shadow -->
+      <feDropShadow dx="1" dy="2" stdDeviation="1.5" flood-color="#000" flood-opacity="0.6" />
+    </filter>
+  </defs>
+
+  <path d="M -15 25 h 35 c 15 0, 15 -10, 30 -10 c 15 0, 15 20, 0 20 c -15 0, -15 -20, -30 -20 c -15 0, -15 20, 0 20 c 15 0, 15 -10, 30 -10 h 35"
+        fill="none" stroke="#D4A373" stroke-width="7" stroke-linecap="round" filter="url(#jute)" />
+</svg>

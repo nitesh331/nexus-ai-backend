@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+:root {
+  --ds-bg-start: #04060C;
+  --ds-bg-end: #0A1A2A;
+  --ds-teal: #00E5B0;
+  --ds-blue: #3B82F6;
+  --ds-cyan: #22D3EE;
+  --ds-hotspot: #F43F5E;
+  --ds-card-bg: rgba(255, 255, 255, 0.05);
+  --ds-card-border: rgba(255, 255, 255, 0.1);
+  --ds-text-primary: #FFFFFF;
+  --ds-text-muted: #94A3B8;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+@keyframes ds-card-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes ds-border-glow {
+  0%, 100% {
+    opacity: 0.65;
+    box-shadow: 0 0 24px -4px rgba(0, 229, 176, 0.22), 0 0 48px -12px rgba(34, 211, 238, 0.16);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 32px -2px rgba(0, 229, 176, 0.38), 0 0 60px -8px rgba(59, 130, 246, 0.26);
+  }
+}
+
+.ds-border-pulse {
+  animation: ds-border-glow 4s ease-in-out infinite;
+}
+
+@keyframes ds-star-twinkle {
+  0%, 100% { opacity: 0.25; }
+  50% { opacity: 0.85; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-border-pulse {
+    animation: none !important;
+  }
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+  touch-action: manipulation;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Responsive code and table containers inside markdown */
+.markdown-body {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.markdown-body pre {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.markdown-body table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+}
+
+/* --- Premium 3D Typing Indicator CSS --- */
+
+/* Avatar Pulse & Breathe */
+.avatar-pulse-ring {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.8), rgba(168, 85, 247, 0.8));
+  z-index: 0;
+  animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 0.6; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+.avatar-breathe {
+  animation: breathe 2s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Bubble Shimmer (Liquid Glass Effect) */
+.shimmer-dark {
+  background: linear-gradient(90deg, #18181b 0%, #27272a 20%, #18181b 40%, #18181b 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite linear;
+}
+
+.shimmer-light {
+  background: linear-gradient(90deg, #f3f4f6 0%, #ffffff 20%, #f3f4f6 40%, #f3f4f6 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite linear;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* 3D Dots Container & Shadow */
+.dot-3d-container {
+  position: relative;
+  width: 12px;
+  height: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.dot-3d {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  /* Glossy 3D radial gradient */
+  background: radial-gradient(circle at 30% 30%, #e879f9 0%, #a855f7 40%, #3b82f6 80%, #1e3a8a 100%);
+  /* Multiple shadows for 3D depth and bottom trailing glow */
+  box-shadow: 
+    inset -2px -2px 3px rgba(0,0,0,0.5), 
+    inset 1px 1px 3px rgba(255,255,255,0.9), 
+    0 4px 6px rgba(168, 85, 247, 0.4);
+  animation: bounce-3d 1.2s infinite cubic-bezier(0.28, 0.84, 0.42, 1);
+  position: absolute;
+  bottom: 3px;
+}
+
+.dot-shadow {
+  width: 8px;
+  height: 2.5px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.5);
+  filter: blur(1px);
+  animation: shadow-scale 1.2s infinite cubic-bezier(0.28, 0.84, 0.42, 1);
+  position: absolute;
+  bottom: 0;
+}
+
+/* Staggered Delays for Wave Motion */
+.delay-1 { animation-delay: 0s; }
+.delay-2 { animation-delay: 0.15s; }
+.delay-3 { animation-delay: 0.3s; }
+
+@keyframes bounce-3d {
+  0%, 100% { 
+    transform: translateY(0); 
+  }
+  50% { 
+    transform: translateY(-8px); 
+    box-shadow: 
+      inset -2px -2px 3px rgba(0,0,0,0.5), 
+      inset 1px 1px 3px rgba(255,255,255,0.9), 
+      0 8px 10px rgba(168, 85, 247, 0.2); 
+  }
+}
+
+@keyframes shadow-scale {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(0.3); opacity: 0.1; }
+}
+
+.mask-image-radial { mask-image: radial-gradient(circle, black 40%, transparent 100%); -webkit-mask-image: radial-gradient(circle, black 40%, transparent 100%); }
