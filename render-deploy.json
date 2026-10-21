@@ -1,0 +1,49 @@
+{
+  "type": "web_service",
+  "name": "nexus-ai-backend",
+  "ownerId": "tea-dac2f07qj5pc739osflg",
+  "repo": "https://github.com/nitesh331/nexus-ai-backend",
+  "branch": "master",
+  "autoDeploy": "yes",
+  "serviceDetails": {
+    "env": "node",
+    "buildPlan": "starter",
+    "cache": {"profile": "no-cache"},
+    "envSpecificDetails": {
+      "buildCommand": "npm install && npm run build",
+      "startCommand": "npm run start",
+      "healthCheckPath": "/api/network-status",
+      "ipAllowList": [{"cidrBlock": "0.0.0.0/0", "description": "everywhere"}],
+      "maintenanceMode": {"enabled": false},
+      "numInstances": 1,
+      "plan": "free",
+      "previews": {"generation": "off"},
+      "pullRequestPreviewsEnabled": "no",
+      "region": "singapore",
+      "renderSubdomainPolicy": "enabled",
+      "runtime": "node",
+      "envVars": [
+        {"key": "NODE_ENV", "value": "production"},
+        {"key": "PORT", "value": "10000"},
+        {"key": "OPENAI_API_KEY", "value": ""},
+        {"key": "GROQ_API_KEY", "value": ""},
+        {"key": "ANTHROPIC_API_KEY", "value": ""},
+        {"key": "GEMINI_API_KEY", "value": ""},
+        {"key": "TAVILY_API_KEY", "value": ""},
+        {"key": "CHAT_API_KEY", "value": ""},
+        {"key": "DEEP_SEARCH_API_KEY", "value": ""},
+        {"key": "WEB_DESIGN_API_KEY", "value": ""},
+        {"key": "NOTES_API_KEY", "value": ""},
+        {"key": "IMAGE_VIDEO_API_KEY", "value": ""},
+        {"key": "CODEX_API_KEY", "value": ""},
+        {"key": "OPUS_API_KEY", "value": ""},
+        {"key": "OPENROUTER_API_KEY", "value": ""},
+        {"key": "APP_URL", "value": ""},
+        {"key": "GITHUB_CLIENT_ID", "value": ""},
+        {"key": "GITHUB_CLIENT_SECRET", "value": ""},
+        {"key": "OLLAMA_BASE_URL", "value": "http://127.0.0.1:11434/v1"},
+        {"key": "OLLAMA_MODEL", "value": "llama3.2"}
+      ]
+    }
+  }
+}

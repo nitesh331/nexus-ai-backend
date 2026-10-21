@@ -1,0 +1,11 @@
+{
+  "repo": "https://github.com/nitesh331/nexus-ai-backend",
+  "branch": "master",
+  "serviceDetails": {
+    "envSpecificDetails": {
+      "buildCommand": "npm install && npm run build",
+      "startCommand": "npm run start",
+      "healthCheckPath": "/api/network-status"
+    }
+  }
+}
